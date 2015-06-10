@@ -1,0 +1,57 @@
+<div class="blok blok-kroniks">
+<div class="blok-hed section-title"><h3>Opinion</h3></div>
+<div class="blok-body">
+
+	<ul class="media-list-sm">
+	<BOUCLE_chroniques(ARTICLES){id_rubrique==^(6|8|7|9|13)$}{par date}{inverse}{0,5}>
+		<li class="media news-item">
+		
+	
+		<a class="pull-right" href="#URL_ARTICLE">
+		<div>
+		
+		
+		<BOUCLE_auteurs(AUTEURS){id_article}>
+		[(#LOGO_AUTEUR|image_reduire{90,0}|image_recadre{80,80,center}|inserer_attribut{class,img-circle}
+		|sinon{[(#LOGO_ARTICLE|image_reduire{90,0}|image_recadre{80,80,center}|inserer_attribut{class,img-circle})]}
+		|sinon{<img class="img-circle" src="http://congopage.s3.amazonaws.com/CACHE/img/profile-default.png" width="80" >}
+		)]</BOUCLE_auteurs>
+		<//B_auteurs>
+		
+		
+		
+		[(#LOGO_ARTICLE|image_reduire{90,0}|image_recadre{80,80,center}|inserer_attribut{class,img-circle}
+		|sinon{<img class="img-circle" src="http://congopage.s3.amazonaws.com/CACHE/img/profile-default.png" width="80" >}
+		)]
+		
+		
+	
+		
+		
+		</div>
+		</a> 
+			
+	
+		<div class="media-body">
+			
+		
+			
+		
+			<span class="media-hed">[(#LESAUTEURS|sinon{ #MODELE{related-rubrik}{id_rubrique=#ID_RUBRIQUE} })]</span>		
+			
+			<h4 class="media-heading"><a href="#URL_ARTICLE">#TITRE</a></h4>
+			<p class="small-meta">
+			[<span class="timesince">(#DATE|affdate_court)</span>]
+			<span class="meta-separator">|</span>					
+			[<span class="pageviews"><strong>(#VISITES)</strong> views </span>]
+			</p>
+			</div> 
+			
+			
+			</li>
+		</BOUCLE_chroniques>  
+		</ul>
+		
+		
+</div>
+</div>
