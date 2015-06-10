@@ -1,0 +1,77 @@
+<section class="hero featured-section">
+	<div class="container clearfix">
+		<div class="row">
+			<div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">		
+			
+				<BOUCLE_laune(ARTICLES){id_mot=1}{par date}{doublons hero}{inverse}{0,1}>
+				
+					<article class="top-story news-item">
+					
+						[<a href="#URL_ARTICLE">(#MODELE{story-thumb}{reduire=400,redadrew=0}{redadreh=228}{redadrealign=center}{redadrebg=transparent}|inserer_attribut{class, 'logo'})</a>]
+						
+						<BOUCLE_topstory_section(RUBRIQUES){id_secteur}{0,1}>
+						<span class="ts-section-tag">#TITRE</span>
+						</BOUCLE_topstory_section>			
+						
+						<h1 class="story-title"><a href="#URL_ARTICLE">#TITRE</a></h1>
+								
+						<hr class="divider">	
+
+					    [<p class="introduction entry-content">(#INTRODUCTION|couper{200, (...) <br><a href="#URL_ARTICLE" class="more">Continue reading <i class="fa">&#xf061;</i> </a>})</p>]
+					</article>
+				
+				</BOUCLE_laune>
+									
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">	
+			   
+				<ul class="news-item sub-hero">
+					<BOUCLE_servol(ARTICLES){id_secteur==^(2|3|4|5|6|13|21)$}{par date}{doublons hero}{inverse}{0,2}>
+						<li class="media news-item">
+						
+							<a  href="#URL_ARTICLE">
+							<div style="placeholder clear">
+							[(#MODELE{story-thumb}{reduire=250,redadrew=215}{redadreh=144}{redadrealign=center}||inserer_attribut{alt, #TITRE|attribut_html})]	
+							</div>	
+							</a> 
+								
+							<div>
+							<h3><a href="#URL_ARTICLE">#TITRE</a></h3>
+							<p class="small-meta">
+							[<span class="timesince">(#DATE|affdate_court)</span>]			
+							<span class="meta-separator">|</span>					
+							[<span class="pageviews"><strong>(#VISITES)</strong> views </span>]			
+							</p>
+							</div>
+							
+						</li>
+					</BOUCLE_servol>  
+				</ul>	       
+       
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+		
+					<div class="blok">			
+					<div class="hp-featured-opinions editors-keyboard">
+								<ul class="media-list">
+									<BOUCLE_edito(ARTICLES){par date}{id_rubrique=16}{inverse}{0,1}>
+										<li class="media news-item">
+																				
+										    <BOUCLE_archives_section(RUBRIQUES){id_rubrique=#ID_RUBRIQUE}{0,1}><h4 class="sectiontag">#TITRE</h4></BOUCLE_archives_section>                	
+											<div class="media-body">
+											<h3 class="media-heading"><a href="#URL_ARTICLE">#TITRE</a></h3>
+						                    [<h6 class="author"><i><:par_auteur:></i>(#LESAUTEURS)</h6>]
+						                    [<p class="descriptif">(#INTRODUCTION|couper{160})</p>]
+											</div>
+											
+										</li>
+									</BOUCLE_edito>  
+								</ul> 
+					</div>
+                    </div>
+					<INCLURE{fond=inclure/blok-adslot3001,self=#SELF} >
+							
+			</div>
+		</div>
+	</div>
+</section>
