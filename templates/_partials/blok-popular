@@ -1,0 +1,31 @@
+		<div class="blok blok-recent">
+		<div class="blok-hed section-title"><h3>Most popular</h3></div>
+		<div class="blok-body">	
+		
+		
+		
+			<ul class="media-list-sm">
+				<BOUCLE_headlinesss(ARTICLES){id_rubrique==^(19|32|38|114|115|70|117|110|35|202|3|2)$}{par popularite}{age<=30}{inverse}{0,7}>
+					<li class="media news-item">
+					
+						<a  class="pull-left" href="#URL_ARTICLE">
+						<picture style="placeholder">
+						[(#MODELE{story-thumb}{reduire=135,redadrew=120}{redadreh=82}{redadrealign=center}||inserer_attribut{alt, #TITRE|attribut_html})]
+						</picture>	
+						</a> 
+							
+						<div class="media-body">
+						<h4 class="media-heading"><a href="#URL_ARTICLE">#TITRE</a></h4>
+						<p class="small-meta">
+						[<span class="timesince">(#DATE|affdate_court)</span>]
+						<span class="meta-separator">|</span>					
+						[<span class="pageviews"><strong>(#VISITES)</strong> views </span>]
+						</p>
+						</div>
+						
+					</li>
+				</BOUCLE_headlinesss>  
+			</ul>
+			  
+		</div>
+		</div>
