@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="#LANG">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE; chrome=1" />
+<meta http-equiv="content-type" content="text/html;charset=utf-#CHARSET" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)" />]
+	<link rel="canonical" href="#URL_SITE_SPIP" />
+	<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="http://feeds.feedburner.com/ThePatrioticVanguard" />
+
+    [<meta property="og:title" content="(#NOM_SITE_SPIP|textebrut)"/>]
+    <meta property="og:url" content="#URL_SITE_SPIP" />
+    [<meta property="og:site_name" content="(#NOM_SITE_SPIP|textebrut)" />]
+    <meta property="og:type" content="website" />
+    [<meta property="og:description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)" />]
+    <meta property="og:country-name" content="SIERRA LEONE" />
+   
+    <META NAME="ROBOTS" CONTENT="NOYDIR,NOODP">
+	<INCLURE{fond=inclure/_global_metas}>
+
+</head>
+<body class="homepage" id="homepage">
+
+<INCLURE{fond=inclure/_global_header}{home=oui}>
+<INCLURE{fond=inclure/module-hero,self=#SELF}>
+<INCLURE{fond=inclure/module-editors-picks,self=#SELF}>
+<INCLURE{fond=inclure/module-ad-leaderboard-1,self=#SELF}>
+
+<section>
+	<div class="container">
+		<div class="row" >
+			<div class="col-md-8 col-sm-12 ">
+			    <INCLURE{fond=inclure/module-latest,self=#SELF}>		
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">			
+				<INCLURE{fond=inclure/blok-opinions}>
+				<INCLURE{fond=inclure/blok-adslot3002,self=#SELF}>
+				<INCLURE{fond=inclure/blok-popular,self=#SELF}>
+			</div>
+		</div>
+	</div>
+<section>
+
+<INCLURE{fond=inclure/module-newsletter,self=#SELF}>
+<INCLURE{fond=inclure/_global_footer,self=#SELF}>
+<INCLURE{fond=inclure/_global_bottom_assets,self=#SELF} />
+   
+<script type="text/javascript">function target_popup(form) {
+    window.open('', 'formpopup', 'width=700,height=700,resizeable,scrollbars');
+    form.target = 'formpopup';
+}</script>
+
+</body>
+</html>
