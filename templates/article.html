@@ -1,0 +1,257 @@
+<BOUCLE_principale(ARTICLES) {id_article}>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="#LANG">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE; chrome=1" />
+<meta http-equiv="content-type" content="text/html;charset=utf-#CHARSET" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>[(#TITRE|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
+[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+[<link rel="canonical" href="(#URL_ARTICLE|url_absolue)" >]
+<meta name="author" content="The Patriotic Vanguard">
+
+    [<meta property="og:title"        content="(#TITRE|textebrut)" />]
+    <meta  property="og:type"         content="article" />
+    [<meta  property="og:url"          content="(#URL_ARTICLE|url_absolue)" />]
+    [<meta property="og:site_name"    content="(#NOM_SITE_SPIP|textebrut)" />]
+    [<meta property="og:description"  content="(#INTRODUCTION{350}|attribut_html)" />]
+    <meta  property="og:country-name" content="SIERRA LEONE" />
+    [<meta property="og:article:published_time" name="og:article:published_time" content="(#DATE|date_iso)" />]
+    
+    <!-- image must be 1200x630 -->
+    <meta property="og:image" content="#MODELE{socialimage}" />
+    	<BOUCLE_activecatm(RUBRIQUES){id_rubrique}>
+		[<meta property="og:article:section" name="og:article:section" content="(#TITRE|textebrut)" />]
+		[<meta property="article:section" content="(#TITRE|textebrut)" />]
+		</BOUCLE_activecatm>
+	<meta property="article:publisher" content="https://www.facebook.com/PatrioticVanguard" />
+
+	[<meta property="article:published_time" content="(#DATE|date_iso)" />]
+	[<meta property="article:modified_time" content="(#DATE_MODIF**|date_iso)" />]
+	<meta property="article:publisher" content="The Patriotic Vanguard" />
+    
+	<!-- Twitter -->
+	<meta name="twitter:card"         content="summary_large_image">
+	<meta name="twitter:site"         content="@patrioticvan">
+	<meta name="twitter:creator"      content="@patrioticvan" >
+	<meta name="twitter:domain" content="#URL_SITE_SPIP" >
+	[<meta name="twitter:url"          content="(#URL_ARTICLE|url_absolue)" >]
+	[<meta name="twitter:title"       content="(#TITRE{70}|textebrut)" >]
+	[<meta name="twitter:description" content="(#INTRODUCTION{200}|attribut_html)" >]
+	<!-- image must be at least 280x150px -->
+	<meta name="twitter:image:src"    content="#MODELE{socialimage}" >
+
+
+    <INCLURE{fond=inclure/_global_metas} />
+    
+    	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=excellencelab"></script>
+
+<!--[if lte IE 8]>
+<script src="/assets/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="/assets/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="page-article sect#ID_SECTEUR">
+
+
+<INCLURE{fond=inclure/_global_header,env} />
+<INCLURE{fond=inclure/adslot7281} />
+
+<div class="container">
+<div class="row">
+<div  class="col-md-12">
+
+		<section class="article-header">
+
+			<BOUCLE_related_sections(RUBRIQUES){id_rubrique}{0,1}>
+			<h3 class="article-section" itemprop="alternativeHeadline"><span>#TITRE</span></h3>
+			</BOUCLE_related_sections>		
+			
+			[<div class="article-sur-title" itemprop="alternativeHeadline">(#SURTITRE)</div>]	
+			
+		    <h1 class="article-title" itemprop="headline">#TITRE</h1>
+		    
+		    [<h2 class="article-sub-title" itemprop="alternativeHeadline">(#SOUSTITRE)</h2>]
+		    
+            <div class="meta">
+				[<i>By</i>&nbsp;<span class="article-author">(#LESAUTEURS)</span> <span class="sep">|</span>]
+				[<span class="timestamp"><i class="fa">&#xf017;</i> (#DATE|date_interface)</<span> <span class="sep">|</span>]
+				[<span class="pageviews"><i class="fa">&#xf012;</i> <strong>(#VISITES)</strong> views </span>] 
+
+			</div>
+		    
+
+		</section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div  class="col-md-8 main-content">
+
+	
+	
+
+
+
+
+		<section class="article-body">
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+
+
+		
+			[<div class="chapo">(#CHAPO|image_reduire{500,0})</div>]
+			
+			[(#LOGO_ARTICLE||image_reduire{300}|inserer_attribut{class, 'storyLogo'})]
+		
+			[<div class="texte">(#TEXTE|image_reduire{500,0})</div>]
+			[<div class="ps">(#PS|image_reduire{500,0})</div>]
+
+			[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+			
+			
+			[(#INCLURE{fond=inclure/documents,id_article, env})]
+			
+			
+		</section>
+		<section class="article_footer">
+		
+		
+		
+		
+		<div class="addthis_sharing_toolbox"></div>
+		
+		
+		
+		</section>	 
+		 
+		 
+	    	 	
+	
+	
+		
+
+<section class="related-articles">
+<div class="row">
+<div class="col-md-12 section-title"> <h3> More <BOUCLE_activecat(RUBRIQUES){id_rubrique}>#TITRE</BOUCLE_activecat></h3></div> 
+</div>
+ 
+<div class="row">
+<div class="col-md-12">
+
+	<section class="media-list-lg">
+		<BOUCLE_archives(ARTICLES){id_rubrique}{par date}{inverse}{0,3}>
+			<article class="media">
+							
+				<a  class="pull-left" href="#URL_ARTICLE">
+				<picture class="placeholder">
+				[(#MODELE{story-thumb}{reduire=220,redadrew=199}{redadreh=149}{redadrealign=center}||inserer_attribut{alt, #TITRE|attribut_html})]
+				</picture>	
+				</a> 
+
+				<h3 class="media-heading"><a href="#URL_ARTICLE">#TITRE</a></h3>			
+				[<p class="descriptif">(#INTRODUCTION|couper{160})</p>]
+				<p class="small-meta">
+				
+					<BOUCLE_archives_section(RUBRIQUES){id_rubrique=#ID_RUBRIQUE}{0,1}><span class="sectiontag">#TITRE</span></BOUCLE_archives_section> 
+					
+					[<span class="author"><i><:par_auteur:></i> (#LESAUTEURS)</span> ]
+					<span class="meta-separator">|</span>
+					[<span class="timesince">(#DATE|date_relative)</span>]
+					<span class="meta-separator">|</span>					
+					[<span class="pageviews"><strong>(#VISITES)</strong> views </span>]                
+				</p>
+			<div class="clearfix"></div>
+			</article>
+		</BOUCLE_archives>  
+	</section>					
+			
+</div>
+</div>
+
+</section>
+	
+
+
+<section class="article-comments">
+
+<div class="section-title"> <h3> Comments</h3></div> 
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            
+			var disqus_identifier = 'thepatrioticvanguard_#ID_ARTICLE';
+            var disqus_url = 'http://thepatrioticvanguard.com/spip.php?article#ID_ARTICLE';
+			var disqus_shortname = 'thepatrioticvanguard'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</section>
+
+
+
+
+
+</div>
+<div class="sidebar col-md-4 col-lg-4 hidden-sm hidden-xs">
+
+<INCLURE{fond=inclure/blok-adslot3001} />	
+<INCLURE{fond=inclure/blok-opinions}>
+<INCLURE{fond=inclure/blok-popular}>  
+<INCLURE{fond=inclure/blok-adslot3002} />	
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+[(#REM) Pied de page ]
+<INCLURE{fond=inclure/_global_footer,self=#SELF} />
+<INCLURE{fond=inclure/_global_bottom_assets,self=#SELF} />
+
+<script>
+
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'thepatrioticvanguard'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>
+</BOUCLE_principale>
