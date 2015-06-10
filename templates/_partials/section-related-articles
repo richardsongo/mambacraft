@@ -1,0 +1,39 @@
+<section class="related-articles">
+<div class="row">
+<div class="col-md-12 section-title"> <h3> More <BOUCLE_activecat(RUBRIQUES){id_rubrique}>#TITRE</BOUCLE_activecat></h3></div> 
+</div>
+ 
+<div class="row">
+<div class="col-md-12">
+
+	<section class="media-list-lg">
+		<BOUCLE_archives(ARTICLES){id_rubrique}{par date}{inverse}{0,3}>
+			<article class="media">
+							
+				<a  class="pull-left" href="#URL_ARTICLE">
+				<picture class="placeholder">
+				[(#MODELE{story-thumb}{reduire=220,redadrew=199}{redadreh=149}{redadrealign=center}||inserer_attribut{alt, #TITRE|attribut_html})]
+				</picture>	
+				</a> 
+
+				<h3 class="media-heading"><a href="#URL_ARTICLE">#TITRE</a></h3>			
+				[<p class="descriptif">(#INTRODUCTION|couper{160})</p>]
+				<p class="small-meta">
+				
+					<BOUCLE_archives_section(RUBRIQUES){id_rubrique=#ID_RUBRIQUE}{0,1}><span class="sectiontag">#TITRE</span></BOUCLE_archives_section> 
+					
+					[<span class="author"><i><:par_auteur:></i> (#LESAUTEURS)</span> ]
+					<span class="meta-separator">|</span>
+					[<span class="timesince">(#DATE|date_relative)</span>]
+					<span class="meta-separator">|</span>					
+					[<span class="pageviews"><strong>(#VISITES)</strong> views </span>]                
+				</p>
+			<div class="clearfix"></div>
+			</article>
+		</BOUCLE_archives>  
+	</section>					
+			
+</div>
+</div>
+
+</section>
