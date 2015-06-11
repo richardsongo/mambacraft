@@ -1,23 +1,22 @@
 
-<INCLURE{fond=inclure/_global_header}{home=oui}>
-<INCLURE{fond=inclure/module-hero,self=#SELF}>
-<INCLURE{fond=inclure/module-editors-picks,self=#SELF}>
-<INCLURE{fond=inclure/module-ad-leaderboard-1,self=#SELF}>
+{% include 'partials/module-hero' %}
+{% include 'partials/module-editors-picks' %}
+{% include 'partials/module-ad-leaderboard-1' %}
 
 <section>
 	<div class="container">
 		<div class="row" >
 			<div class="col-md-8 col-sm-12 ">
-			    <INCLURE{fond=inclure/module-latest,self=#SELF}>		
+			    {% include 'partials/module-latest' %}		
 			</div>
 			<div class="col-md-4 col-sm-12 col-xs-12">			
-				<INCLURE{fond=inclure/blok-opinions}>
-				<INCLURE{fond=inclure/blok-adslot3002,self=#SELF}>
-				<INCLURE{fond=inclure/blok-popular,self=#SELF}>
+				{% include 'partials/blok-opinions' %}
+				{% include 'partials/blok-adslot3002' %}
+				{% include 'partials/blok-popular' %}
 			</div>
 		</div>
 	</div>
 <section>
 
-<INCLURE{fond=inclure/module-newsletter,self=#SELF}>
-<INCLURE{fond=inclure/_global_bottom_assets,self=#SELF} />
+{% include 'partials/module-newsletter' %}
+{% include 'partials/_global_bottom_assets' %}
